@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:s0="urn:XCAServer" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:XCAServer">
+  <types>
+    <xsd:schema elementFormDefault="unqualified" targetNamespace="urn:XCAServer">
+      <xsd:simpleType name="WLChar">
+        <xsd:restriction base="xsd:string">
+          <xsd:length value="1" fixed="true"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:schema>
+  </types>
+  <message name="XCAServer_REFRESH_AUTHSESSIONS_MessageIn"/>
+  <message name="XCAServer_REFRESH_AUTHSESSIONS_MessageOut"/>
+  <message name="XCAServer_ISEXIST_ELEMENTSERVICE_MessageIn">
+    <part name="sServiceName" type="xsd:string"/>
+    <part name="sElementName" type="xsd:string"/>
+    <part name="sSessionVar" type="xsd:string"/>
+  </message>
+  <message name="XCAServer_ISEXIST_ELEMENTSERVICE_MessageOut">
+    <part name="ISEXIST_ELEMENTSERVICEResult" type="xsd:boolean"/>
+  </message>
+  <message name="XCAServer_UPLOAD_SERVERMATRIX_MessageIn">
+    <part name="sServiceName" type="xsd:string"/>
+    <part name="sUserName" type="xsd:string"/>
+    <part name="sServerMatrix" type="xsd:string"/>
+  </message>
+  <message name="XCAServer_UPLOAD_SERVERMATRIX_MessageOut">
+    <part name="UPLOAD_SERVERMATRIXResult" type="xsd:boolean"/>
+  </message>
+  <message name="XCAServer_GET_SERVER_CHALLENGE_MessageIn">
+    <part name="sServiceName" type="xsd:string"/>
+    <part name="sElementName" type="xsd:string"/>
+  </message>
+  <message name="XCAServer_GET_SERVER_CHALLENGE_MessageOut">
+    <part name="GET_SERVER_CHALLENGEResult" type="xsd:string"/>
+  </message>
+  <message name="XCAServer_SEND_CLIENT_RESPONSE_MessageIn">
+    <part name="sSessionVar" type="xsd:string"/>
+    <part name="sServiceName" type="xsd:string"/>
+    <part name="sElementName" type="xsd:string"/>
+    <part name="sClientResponse" type="xsd:string"/>
+  </message>
+  <message name="XCAServer_SEND_CLIENT_RESPONSE_MessageOut">
+    <part name="SEND_CLIENT_RESPONSEResult" type="xsd:boolean"/>
+  </message>
+  <message name="XCAServer_GENERATE_SERVER_CHALLENGE_WS_MessageIn">
+    <part name="sServiceName" type="xsd:string"/>
+    <part name="sElementID" type="xsd:string"/>
+  </message>
+  <message name="XCAServer_GENERATE_SERVER_CHALLENGE_WS_MessageOut">
+    <part name="GENERATE_SERVER_CHALLENGE_WSResult" type="xsd:string"/>
+  </message>
+  <message name="XCAServer_GET_AUTH_RESULT_MessageIn">
+    <part name="sSessionVar" type="xsd:string"/>
+    <part name="sServiceName" type="xsd:string"/>
+    <part name="sElementName" type="xsd:string"/>
+  </message>
+  <message name="XCAServer_GET_AUTH_RESULT_MessageOut">
+    <part name="GET_AUTH_RESULTResult" type="xsd:boolean"/>
+  </message>
+  <message name="XCAServer_GET_SESSIONVAR_MessageIn">
+    <part name="sServiceName" type="xsd:string"/>
+    <part name="sElementName" type="xsd:string"/>
+  </message>
+  <message name="XCAServer_GET_SESSIONVAR_MessageOut">
+    <part name="GET_SESSIONVARResult" type="xsd:string"/>
+  </message>
+  <message name="XCAServer_COMPUTE_HASH1_MessageIn">
+    <part name="sHashAlgo" type="xsd:string"/>
+    <part name="sInput" type="xsd:string"/>
+  </message>
+  <message name="XCAServer_COMPUTE_HASH1_MessageOut">
+    <part name="COMPUTE_HASH1Result" type="xsd:string"/>
+  </message>
+  <message name="XCAServer_GET_SESSIONVAR_ONLY_MessageIn">
+    <part name="sServiceName" type="xsd:string"/>
+    <part name="sElementName" type="xsd:string"/>
+  </message>
+  <message name="XCAServer_GET_SESSIONVAR_ONLY_MessageOut">
+    <part name="GET_SESSIONVAR_ONLYResult" type="xsd:string"/>
+  </message>
+  <message name="XCAServer_ISEXIST_CURRENTLOGIN_FORME_MessageIn">
+    <part name="sServiceName" type="xsd:string"/>
+    <part name="sElementName" type="xsd:string"/>
+  </message>
+  <message name="XCAServer_ISEXIST_CURRENTLOGIN_FORME_MessageOut">
+    <part name="ISEXIST_CURRENTLOGIN_FORMEResult" type="xsd:boolean"/>
+  </message>
+  <message name="XCAServer_ISEXIST_SERVICE_MessageIn">
+    <part name="ThisServiceName" type="xsd:string"/>
+  </message>
+  <message name="XCAServer_ISEXIST_SERVICE_MessageOut">
+    <part name="ISEXIST_SERVICEResult" type="xsd:boolean"/>
+  </message>
+  <message name="XCAServer_CREATE_SERVICE_MessageIn">
+    <part name="ThisServiceName" type="xsd:string"/>
+  </message>
+  <message name="XCAServer_CREATE_SERVICE_MessageOut">
+    <part name="CREATE_SERVICEResult" type="xsd:boolean"/>
+  </message>
+  <message name="XCAServer_CREATE_ELEMENT_MessageIn">
+    <part name="ThisElementID" type="xsd:string"/>
+    <part name="ThisSmartphoneNumber" type="xsd:string"/>
+    <part name="ThisElementName" type="xsd:string"/>
+    <part name="ThisElementType" type="xsd:string"/>
+    <part name="ThisElementLevel" type="xsd:string"/>
+  </message>
+  <message name="XCAServer_CREATE_ELEMENT_MessageOut">
+    <part name="CREATE_ELEMENTResult" type="xsd:boolean"/>
+  </message>
+  <message name="XCAServer_CREATE_ELEMENTSERVICE_MessageIn">
+    <part name="ThisServiceName" type="xsd:string"/>
+    <part name="ThisElementID" type="xsd:string"/>
+  </message>
+  <message name="XCAServer_CREATE_ELEMENTSERVICE_MessageOut">
+    <part name="CREATE_ELEMENTSERVICEResult" type="xsd:boolean"/>
+  </message>
+  <message name="XCAServer_ISEXIST_ELEMENT_MessageIn">
+    <part name="ThisElementID" type="xsd:string"/>
+  </message>
+  <message name="XCAServer_ISEXIST_ELEMENT_MessageOut">
+    <part name="ISEXIST_ELEMENTResult" type="xsd:boolean"/>
+  </message>
+  <message name="XCAServer_DOWNLOAD_CLIENTMATRIX_MessageIn">
+    <part name="sServiceName" type="xsd:string"/>
+    <part name="sElementID" type="xsd:string"/>
+    <part name="sActivationCode" type="xsd:string"/>
+  </message>
+  <message name="XCAServer_DOWNLOAD_CLIENTMATRIX_MessageOut">
+    <part name="DOWNLOAD_CLIENTMATRIXResult" type="xsd:string"/>
+  </message>
+  <message name="XCAServer_GENERATE_MATRIX1_MessageIn">
+    <part name="sServiceName" type="xsd:string"/>
+    <part name="sElementID" type="xsd:string"/>
+  </message>
+  <message name="XCAServer_GENERATE_MATRIX1_MessageOut">
+    <part name="GENERATE_MATRIX1Result" type="xsd:string"/>
+  </message>
+  <message name="XCAServer_SHUFFLE_MATRIX1_MessageIn">
+    <part name="sSecretCode" type="xsd:string"/>
+    <part name="nIDElementServices" type="xsd:long"/>
+  </message>
+  <message name="XCAServer_SHUFFLE_MATRIX1_MessageOut">
+    <part name="SHUFFLE_MATRIX1Result" type="xsd:boolean"/>
+  </message>
+  <message name="XCAServer_ISEXIST_ELEMENTSERVICE_XCAJAX_MessageIn">
+    <part name="sServiceName" type="xsd:string"/>
+    <part name="sElementName" type="xsd:string"/>
+    <part name="sSessionVar" type="xsd:string"/>
+  </message>
+  <message name="XCAServer_ISEXIST_ELEMENTSERVICE_XCAJAX_MessageOut">
+    <part name="ISEXIST_ELEMENTSERVICE_XCAJAXResult" type="xsd:boolean"/>
+  </message>
+  <message name="XCAServer_GET_SESSIONVAR_XCAJAX_MessageIn">
+    <part name="sServiceName" type="xsd:string"/>
+    <part name="sElementName" type="xsd:string"/>
+  </message>
+  <message name="XCAServer_GET_SESSIONVAR_XCAJAX_MessageOut">
+    <part name="GET_SESSIONVAR_XCAJAXResult" type="xsd:string"/>
+  </message>
+  <portType name="XCAServerSOAPPortType">
+    <operation name="REFRESH_AUTHSESSIONS">
+      <documentation> R&amp;eacute;sum&amp;eacute; : &amp;lt;indiquez ici ce que fait la proc&amp;eacute;dure&amp;gt;&lt;br /&gt; Syntaxe :&lt;br /&gt;REFRESH_AUTHSESSIONS ()&lt;br /&gt;&lt;br /&gt; Param&amp;egrave;tres :&lt;br /&gt;	Aucun&lt;br /&gt; Valeur de retour :&lt;br /&gt; 	Aucune&lt;br /&gt;&lt;br /&gt; Exemple :&lt;br /&gt; Indiquez ici un exemple d'utilisation.&lt;br /&gt;// Proc&amp;eacute;dure automatique :&lt;br /&gt; La proc&amp;eacute;dure est ex&amp;eacute;cut&amp;eacute;e automatiquement, apr&amp;egrave;s le code d'initialisation du projet&lt;br /&gt; </documentation>
+      <input message="s0:XCAServer_REFRESH_AUTHSESSIONS_MessageIn"/>
+      <output message="s0:XCAServer_REFRESH_AUTHSESSIONS_MessageOut"/>
+    </operation>
+    <operation name="ISEXIST_ELEMENTSERVICE">
+      <documentation> R&amp;eacute;sum&amp;eacute; : &amp;lt;indiquez ici ce que fait la proc&amp;eacute;dure&amp;gt;&lt;br /&gt; Syntaxe :&lt;br /&gt;[ &amp;lt;R&amp;eacute;sultat&amp;gt; = ] ISEXIST_ELEMENTSERVICE (&amp;lt;sServiceName&amp;gt; est cha&amp;#238;ne, &amp;lt;sElementName&amp;gt; est cha&amp;#238;ne, &amp;lt;sSessionVar&amp;gt; est cha&amp;#238;ne)&lt;br /&gt;&lt;br /&gt; Param&amp;egrave;tres :&lt;br /&gt;	sServiceName (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de sServiceName&amp;gt;&lt;br /&gt;	sElementName (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de sElementName&amp;gt;&lt;br /&gt;	sSessionVar (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de sSessionVar&amp;gt;&lt;br /&gt; Valeur de retour :&lt;br /&gt; 	bool&amp;eacute;en : // 	Aucune&lt;br /&gt;&lt;br /&gt; Exemple :&lt;br /&gt; Indiquez ici un exemple d'utilisation.&lt;br /&gt;</documentation>
+      <input message="s0:XCAServer_ISEXIST_ELEMENTSERVICE_MessageIn"/>
+      <output message="s0:XCAServer_ISEXIST_ELEMENTSERVICE_MessageOut"/>
+    </operation>
+    <operation name="UPLOAD_SERVERMATRIX">
+      <documentation> R&amp;eacute;sum&amp;eacute; : &amp;lt;indiquez ici ce que fait la proc&amp;eacute;dure&amp;gt;&lt;br /&gt; Syntaxe :&lt;br /&gt;[ &amp;lt;R&amp;eacute;sultat&amp;gt; = ] UPLOAD_SERVERMATRIX (&amp;lt;sServiceName&amp;gt; est cha&amp;#238;ne, &amp;lt;sUserName&amp;gt; est cha&amp;#238;ne, &amp;lt;sServerMatrix&amp;gt; est cha&amp;#238;ne UNICODE)&lt;br /&gt;&lt;br /&gt; Param&amp;egrave;tres :&lt;br /&gt;	sServiceName (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de sServiceName&amp;gt;&lt;br /&gt;	sUserName (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de sElementName&amp;gt;&lt;br /&gt;	sServerMatrix (cha&amp;#238;ne UNICODE) : &amp;lt;indiquez ici le r&amp;#244;le de sServerMatrix&amp;gt;&lt;br /&gt; Valeur de retour :&lt;br /&gt; 	bool&amp;eacute;en : // 	Aucune&lt;br /&gt;&lt;br /&gt; Exemple :&lt;br /&gt; Indiquez ici un exemple d'utilisation.&lt;br /&gt;</documentation>
+      <input message="s0:XCAServer_UPLOAD_SERVERMATRIX_MessageIn"/>
+      <output message="s0:XCAServer_UPLOAD_SERVERMATRIX_MessageOut"/>
+    </operation>
+    <operation name="GET_SERVER_CHALLENGE">
+      <documentation> R&amp;eacute;sum&amp;eacute; : &amp;lt;indiquez ici ce que fait la proc&amp;eacute;dure&amp;gt;&lt;br /&gt; Syntaxe :&lt;br /&gt;[ &amp;lt;R&amp;eacute;sultat&amp;gt; = ] GET_SERVER_CHALLENGE (&amp;lt;sServiceName&amp;gt; est cha&amp;#238;ne, &amp;lt;sElementName&amp;gt; est cha&amp;#238;ne)&lt;br /&gt;&lt;br /&gt; Param&amp;egrave;tres :&lt;br /&gt;	sServiceName (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de sServiceName&amp;gt;&lt;br /&gt;	sElementName (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de sElementName&amp;gt;&lt;br /&gt; Valeur de retour :&lt;br /&gt; 	cha&amp;#238;ne ANSI : // 	Aucune&lt;br /&gt;&lt;br /&gt; Exemple :&lt;br /&gt; Indiquez ici un exemple d'utilisation.&lt;br /&gt;</documentation>
+      <input message="s0:XCAServer_GET_SERVER_CHALLENGE_MessageIn"/>
+      <output message="s0:XCAServer_GET_SERVER_CHALLENGE_MessageOut"/>
+    </operation>
+    <operation name="SEND_CLIENT_RESPONSE">
+      <documentation> R&amp;eacute;sum&amp;eacute; : &amp;lt;indiquez ici ce que fait la proc&amp;eacute;dure&amp;gt;&lt;br /&gt; Syntaxe :&lt;br /&gt;[ &amp;lt;R&amp;eacute;sultat&amp;gt; = ] SEND_CLIENT_RESPONSE (&amp;lt;sSessionVar&amp;gt; est cha&amp;#238;ne, &amp;lt;sServiceName&amp;gt; est cha&amp;#238;ne, &amp;lt;sElementName&amp;gt; est cha&amp;#238;ne, &amp;lt;sClientResponse&amp;gt; est cha&amp;#238;ne)&lt;br /&gt;&lt;br /&gt; Param&amp;egrave;tres :&lt;br /&gt;	sSessionVar (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de sSessionVar&amp;gt;&lt;br /&gt;	sServiceName (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de sServiceName&amp;gt;&lt;br /&gt;	sElementName (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de sElementName&amp;gt;&lt;br /&gt;	sClientResponse (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de sClientResponse&amp;gt;&lt;br /&gt; Valeur de retour :&lt;br /&gt; 	bool&amp;eacute;en : // 	Aucune&lt;br /&gt;&lt;br /&gt; Exemple :&lt;br /&gt; Indiquez ici un exemple d'utilisation.&lt;br /&gt;</documentation>
+      <input message="s0:XCAServer_SEND_CLIENT_RESPONSE_MessageIn"/>
+      <output message="s0:XCAServer_SEND_CLIENT_RESPONSE_MessageOut"/>
+    </operation>
+    <operation name="GENERATE_SERVER_CHALLENGE_WS">
+      <documentation> R&amp;eacute;sum&amp;eacute; : &amp;lt;indiquez ici ce que fait la proc&amp;eacute;dure&amp;gt;&lt;br /&gt; Syntaxe :&lt;br /&gt;[ &amp;lt;R&amp;eacute;sultat&amp;gt; = ] GENERATE_SERVER_CHALLENGE_WS (&amp;lt;sServiceName&amp;gt; est cha&amp;#238;ne, &amp;lt;sElementID&amp;gt; est cha&amp;#238;ne)&lt;br /&gt;&lt;br /&gt; Param&amp;egrave;tres :&lt;br /&gt;	sServiceName (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de sServiceName&amp;gt;&lt;br /&gt;	sElementID (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de sElementID&amp;gt;&lt;br /&gt; Valeur de retour :&lt;br /&gt; 	cha&amp;#238;ne ANSI : // 	Aucune&lt;br /&gt;&lt;br /&gt; Exemple :&lt;br /&gt; Indiquez ici un exemple d'utilisation.&lt;br /&gt;</documentation>
+      <input message="s0:XCAServer_GENERATE_SERVER_CHALLENGE_WS_MessageIn"/>
+      <output message="s0:XCAServer_GENERATE_SERVER_CHALLENGE_WS_MessageOut"/>
+    </operation>
+    <operation name="GET_AUTH_RESULT">
+      <documentation> R&amp;eacute;sum&amp;eacute; : &amp;lt;indiquez ici ce que fait la proc&amp;eacute;dure&amp;gt;&lt;br /&gt; Syntaxe :&lt;br /&gt;[ &amp;lt;R&amp;eacute;sultat&amp;gt; = ] GET_AUTH_RESULT (&amp;lt;sSessionVar&amp;gt; est cha&amp;#238;ne, &amp;lt;sServiceName&amp;gt; est cha&amp;#238;ne, &amp;lt;sElementName&amp;gt; est cha&amp;#238;ne)&lt;br /&gt;&lt;br /&gt; Param&amp;egrave;tres :&lt;br /&gt;	sSessionVar (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de sSessionVar&amp;gt;&lt;br /&gt;	sServiceName (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de sServiceName&amp;gt;&lt;br /&gt;	sElementName (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de sElementName&amp;gt;&lt;br /&gt; Valeur de retour :&lt;br /&gt; 	bool&amp;eacute;en : // 	Aucune&lt;br /&gt;&lt;br /&gt; Exemple :&lt;br /&gt; Indiquez ici un exemple d'utilisation.&lt;br /&gt;</documentation>
+      <input message="s0:XCAServer_GET_AUTH_RESULT_MessageIn"/>
+      <output message="s0:XCAServer_GET_AUTH_RESULT_MessageOut"/>
+    </operation>
+    <operation name="GET_SESSIONVAR">
+      <documentation> R&amp;eacute;sum&amp;eacute; : &amp;lt;indiquez ici ce que fait la proc&amp;eacute;dure&amp;gt;&lt;br /&gt; Syntaxe :&lt;br /&gt;[ &amp;lt;R&amp;eacute;sultat&amp;gt; = ] GET_SESSIONVAR (&amp;lt;sServiceName&amp;gt; est cha&amp;#238;ne, &amp;lt;sElementName&amp;gt; est cha&amp;#238;ne)&lt;br /&gt;&lt;br /&gt; Param&amp;egrave;tres :&lt;br /&gt;	sServiceName (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de sServiceName&amp;gt;&lt;br /&gt;	sElementName (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de sElementName&amp;gt;&lt;br /&gt; Valeur de retour :&lt;br /&gt; 	cha&amp;#238;ne ANSI : // 	Aucune&lt;br /&gt;&lt;br /&gt; Exemple :&lt;br /&gt; Indiquez ici un exemple d'utilisation.&lt;br /&gt;</documentation>
+      <input message="s0:XCAServer_GET_SESSIONVAR_MessageIn"/>
+      <output message="s0:XCAServer_GET_SESSIONVAR_MessageOut"/>
+    </operation>
+    <operation name="COMPUTE_HASH1">
+      <documentation> R&amp;eacute;sum&amp;eacute; : &amp;lt;indiquez ici ce que fait la proc&amp;eacute;dure&amp;gt;&lt;br /&gt; Syntaxe :&lt;br /&gt;[ &amp;lt;R&amp;eacute;sultat&amp;gt; = ] COMPUTE_HASH1 (&amp;lt;sHashAlgo&amp;gt; est cha&amp;#238;ne, &amp;lt;sInput&amp;gt; est cha&amp;#238;ne)&lt;br /&gt;&lt;br /&gt; Param&amp;egrave;tres :&lt;br /&gt;	sHashAlgo (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de sOutput&amp;gt;&lt;br /&gt;	sInput (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de sInput&amp;gt;&lt;br /&gt; Valeur de retour :&lt;br /&gt; 	cha&amp;#238;ne ANSI : // 	Aucune&lt;br /&gt;&lt;br /&gt; Exemple :&lt;br /&gt; Indiquez ici un exemple d'utilisation.&lt;br /&gt;</documentation>
+      <input message="s0:XCAServer_COMPUTE_HASH1_MessageIn"/>
+      <output message="s0:XCAServer_COMPUTE_HASH1_MessageOut"/>
+    </operation>
+    <operation name="GET_SESSIONVAR_ONLY">
+      <documentation> R&amp;eacute;sum&amp;eacute; : &amp;lt;indiquez ici ce que fait la proc&amp;eacute;dure&amp;gt;&lt;br /&gt; Syntaxe :&lt;br /&gt;[ &amp;lt;R&amp;eacute;sultat&amp;gt; = ] GET_SESSIONVAR_ONLY (&amp;lt;sServiceName&amp;gt; est cha&amp;#238;ne, &amp;lt;sElementName&amp;gt; est cha&amp;#238;ne)&lt;br /&gt;&lt;br /&gt; Param&amp;egrave;tres :&lt;br /&gt;	sServiceName (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de sServiceName&amp;gt;&lt;br /&gt;	sElementName (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de sElementName&amp;gt;&lt;br /&gt; Valeur de retour :&lt;br /&gt; 	cha&amp;#238;ne ANSI : // 	Aucune&lt;br /&gt;&lt;br /&gt; Exemple :&lt;br /&gt; Indiquez ici un exemple d'utilisation.&lt;br /&gt;</documentation>
+      <input message="s0:XCAServer_GET_SESSIONVAR_ONLY_MessageIn"/>
+      <output message="s0:XCAServer_GET_SESSIONVAR_ONLY_MessageOut"/>
+    </operation>
+    <operation name="ISEXIST_CURRENTLOGIN_FORME">
+      <documentation> R&amp;eacute;sum&amp;eacute; : &amp;lt;indiquez ici ce que fait la proc&amp;eacute;dure&amp;gt;&lt;br /&gt; Syntaxe :&lt;br /&gt;[ &amp;lt;R&amp;eacute;sultat&amp;gt; = ] ISEXIST_CURRENTLOGIN_FORME (&amp;lt;sServiceName&amp;gt; est cha&amp;#238;ne, &amp;lt;sElementName&amp;gt; est cha&amp;#238;ne)&lt;br /&gt;&lt;br /&gt; Param&amp;egrave;tres :&lt;br /&gt;	sServiceName (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de sServiceName&amp;gt;&lt;br /&gt;	sElementName (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de sElementName&amp;gt;&lt;br /&gt; Valeur de retour :&lt;br /&gt; 	bool&amp;eacute;en : // 	Aucune&lt;br /&gt;&lt;br /&gt; Exemple :&lt;br /&gt; Indiquez ici un exemple d'utilisation.&lt;br /&gt;</documentation>
+      <input message="s0:XCAServer_ISEXIST_CURRENTLOGIN_FORME_MessageIn"/>
+      <output message="s0:XCAServer_ISEXIST_CURRENTLOGIN_FORME_MessageOut"/>
+    </operation>
+    <operation name="ISEXIST_SERVICE">
+      <documentation> R&amp;eacute;sum&amp;eacute; : &amp;lt;indiquez ici ce que fait la proc&amp;eacute;dure&amp;gt;&lt;br /&gt; Syntaxe :&lt;br /&gt;[ &amp;lt;R&amp;eacute;sultat&amp;gt; = ] ISEXIST_SERVICE (&amp;lt;ThisServiceName&amp;gt; est cha&amp;#238;ne)&lt;br /&gt;&lt;br /&gt; Param&amp;egrave;tres :&lt;br /&gt;	ThisServiceName (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de ServiceName&amp;gt;&lt;br /&gt; Valeur de retour :&lt;br /&gt; 	bool&amp;eacute;en : // 	Aucune&lt;br /&gt;&lt;br /&gt; Exemple :&lt;br /&gt; Indiquez ici un exemple d'utilisation.&lt;br /&gt;</documentation>
+      <input message="s0:XCAServer_ISEXIST_SERVICE_MessageIn"/>
+      <output message="s0:XCAServer_ISEXIST_SERVICE_MessageOut"/>
+    </operation>
+    <operation name="CREATE_SERVICE">
+      <documentation> R&amp;eacute;sum&amp;eacute; : &amp;lt;indiquez ici ce que fait la proc&amp;eacute;dure&amp;gt;&lt;br /&gt; Syntaxe :&lt;br /&gt;[ &amp;lt;R&amp;eacute;sultat&amp;gt; = ] CREATE_SERVICE (&amp;lt;ThisServiceName&amp;gt; est cha&amp;#238;ne)&lt;br /&gt;&lt;br /&gt; Param&amp;egrave;tres :&lt;br /&gt;	ThisServiceName (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de ThisServiceName&amp;gt;&lt;br /&gt; Valeur de retour :&lt;br /&gt; 	bool&amp;eacute;en : // 	Aucune&lt;br /&gt;&lt;br /&gt; Exemple :&lt;br /&gt; Indiquez ici un exemple d'utilisation.&lt;br /&gt;</documentation>
+      <input message="s0:XCAServer_CREATE_SERVICE_MessageIn"/>
+      <output message="s0:XCAServer_CREATE_SERVICE_MessageOut"/>
+    </operation>
+    <operation name="CREATE_ELEMENT">
+      <documentation> R&amp;eacute;sum&amp;eacute; : &amp;lt;indiquez ici ce que fait la proc&amp;eacute;dure&amp;gt;&lt;br /&gt; Syntaxe :&lt;br /&gt;[ &amp;lt;R&amp;eacute;sultat&amp;gt; = ] CREATE_ELEMENT (&amp;lt;ThisElementID&amp;gt; est cha&amp;#238;ne, &amp;lt;ThisSmartphoneNumber&amp;gt; est cha&amp;#238;ne, &amp;lt;ThisElementName&amp;gt; est cha&amp;#238;ne, &amp;lt;ThisElementType&amp;gt; est cha&amp;#238;ne, &amp;lt;ThisElementLevel&amp;gt; est cha&amp;#238;ne)&lt;br /&gt;&lt;br /&gt; Param&amp;egrave;tres :&lt;br /&gt;	ThisElementID (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de ThisElementName&amp;gt;&lt;br /&gt;	ThisSmartphoneNumber (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de ThisSmartphoneNumber&amp;gt;&lt;br /&gt;	ThisElementName (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de ThisElementName&amp;gt;&lt;br /&gt;	ThisElementType (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de ThisElementType&amp;gt;&lt;br /&gt;	ThisElementLevel (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de ThisElementLevel&amp;gt;&lt;br /&gt; Valeur de retour :&lt;br /&gt; 	bool&amp;eacute;en : // 	Aucune&lt;br /&gt;&lt;br /&gt; Exemple :&lt;br /&gt; Indiquez ici un exemple d'utilisation.&lt;br /&gt;</documentation>
+      <input message="s0:XCAServer_CREATE_ELEMENT_MessageIn"/>
+      <output message="s0:XCAServer_CREATE_ELEMENT_MessageOut"/>
+    </operation>
+    <operation name="CREATE_ELEMENTSERVICE">
+      <documentation> R&amp;eacute;sum&amp;eacute; : &amp;lt;indiquez ici ce que fait la proc&amp;eacute;dure&amp;gt;&lt;br /&gt; Syntaxe :&lt;br /&gt;[ &amp;lt;R&amp;eacute;sultat&amp;gt; = ] CREATE_ELEMENTSERVICE (&amp;lt;ThisServiceName&amp;gt; est cha&amp;#238;ne, &amp;lt;ThisElementID&amp;gt; est cha&amp;#238;ne)&lt;br /&gt;&lt;br /&gt; Param&amp;egrave;tres :&lt;br /&gt;	ThisServiceName (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de ThisServiceName&amp;gt;&lt;br /&gt;	ThisElementID (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de ThisElementID&amp;gt;&lt;br /&gt; Valeur de retour :&lt;br /&gt; 	bool&amp;eacute;en : // 	Aucune&lt;br /&gt;&lt;br /&gt; Exemple :&lt;br /&gt; Indiquez ici un exemple d'utilisation.&lt;br /&gt;</documentation>
+      <input message="s0:XCAServer_CREATE_ELEMENTSERVICE_MessageIn"/>
+      <output message="s0:XCAServer_CREATE_ELEMENTSERVICE_MessageOut"/>
+    </operation>
+    <operation name="ISEXIST_ELEMENT">
+      <documentation> R&amp;eacute;sum&amp;eacute; : &amp;lt;indiquez ici ce que fait la proc&amp;eacute;dure&amp;gt;&lt;br /&gt; Syntaxe :&lt;br /&gt;[ &amp;lt;R&amp;eacute;sultat&amp;gt; = ] ISEXIST_ELEMENT (&amp;lt;ThisElementID&amp;gt; est cha&amp;#238;ne)&lt;br /&gt;&lt;br /&gt; Param&amp;egrave;tres :&lt;br /&gt;	ThisElementID (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de ThisElementID&amp;gt;&lt;br /&gt; Valeur de retour :&lt;br /&gt; 	bool&amp;eacute;en : // 	Aucune&lt;br /&gt;&lt;br /&gt; Exemple :&lt;br /&gt; Indiquez ici un exemple d'utilisation.&lt;br /&gt;</documentation>
+      <input message="s0:XCAServer_ISEXIST_ELEMENT_MessageIn"/>
+      <output message="s0:XCAServer_ISEXIST_ELEMENT_MessageOut"/>
+    </operation>
+    <operation name="DOWNLOAD_CLIENTMATRIX">
+      <documentation> R&amp;eacute;sum&amp;eacute; : &amp;lt;indiquez ici ce que fait la proc&amp;eacute;dure&amp;gt;&lt;br /&gt; Syntaxe :&lt;br /&gt;[ &amp;lt;R&amp;eacute;sultat&amp;gt; = ] DOWNLOAD_CLIENTMATRIX (&amp;lt;sServiceName&amp;gt; est cha&amp;#238;ne, &amp;lt;sElementID&amp;gt; est cha&amp;#238;ne, &amp;lt;sActivationCode&amp;gt; est cha&amp;#238;ne)&lt;br /&gt;&lt;br /&gt; Param&amp;egrave;tres :&lt;br /&gt;	sServiceName (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de sServiceName&amp;gt;&lt;br /&gt;	sElementID (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de sElementID&amp;gt;&lt;br /&gt;	sActivationCode (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de sActivationCode&amp;gt;&lt;br /&gt; Valeur de retour :&lt;br /&gt; 	Type ind&amp;eacute;termin&amp;eacute; : // 	Aucune&lt;br /&gt;&lt;br /&gt; Exemple :&lt;br /&gt; Indiquez ici un exemple d'utilisation.&lt;br /&gt;</documentation>
+      <input message="s0:XCAServer_DOWNLOAD_CLIENTMATRIX_MessageIn"/>
+      <output message="s0:XCAServer_DOWNLOAD_CLIENTMATRIX_MessageOut"/>
+    </operation>
+    <operation name="GENERATE_MATRIX1">
+      <documentation> R&amp;eacute;sum&amp;eacute; : &amp;lt;indiquez ici ce que fait la proc&amp;eacute;dure&amp;gt;&lt;br /&gt; Syntaxe :&lt;br /&gt;[ &amp;lt;R&amp;eacute;sultat&amp;gt; = ] GENERATE_MATRIX1 (&amp;lt;sServiceName&amp;gt; est cha&amp;#238;ne, &amp;lt;sElementID&amp;gt; est cha&amp;#238;ne)&lt;br /&gt;&lt;br /&gt; Param&amp;egrave;tres :&lt;br /&gt;	sServiceName (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de sServiceName&amp;gt;&lt;br /&gt;	sElementID (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de sElementID&amp;gt;&lt;br /&gt; Valeur de retour :&lt;br /&gt; 	Type ind&amp;eacute;termin&amp;eacute; : // 	Aucune&lt;br /&gt;&lt;br /&gt; Exemple :&lt;br /&gt; Indiquez ici un exemple d'utilisation.&lt;br /&gt;</documentation>
+      <input message="s0:XCAServer_GENERATE_MATRIX1_MessageIn"/>
+      <output message="s0:XCAServer_GENERATE_MATRIX1_MessageOut"/>
+    </operation>
+    <operation name="SHUFFLE_MATRIX1">
+      <documentation> R&amp;eacute;sum&amp;eacute; : &amp;lt;indiquez ici ce que fait la proc&amp;eacute;dure&amp;gt;&lt;br /&gt; Syntaxe :&lt;br /&gt;[ &amp;lt;R&amp;eacute;sultat&amp;gt; = ] SHUFFLE_MATRIX1 (&amp;lt;sSecretCode&amp;gt; est cha&amp;#238;ne, &amp;lt;nIDElementServices&amp;gt; est entier sur 8 octets)&lt;br /&gt;&lt;br /&gt; Param&amp;egrave;tres :&lt;br /&gt;	sSecretCode (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de sSecretCode&amp;gt;&lt;br /&gt;	nIDElementServices (entier sur 8 octets) : &amp;lt;indiquez ici le r&amp;#244;le de nIDElementServices&amp;gt;&lt;br /&gt; Valeur de retour :&lt;br /&gt; 	bool&amp;eacute;en : // 	Aucune&lt;br /&gt;&lt;br /&gt; Exemple :&lt;br /&gt; Indiquez ici un exemple d'utilisation.&lt;br /&gt;&lt;br /&gt;	sMatrix (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de sMatrix&amp;gt;</documentation>
+      <input message="s0:XCAServer_SHUFFLE_MATRIX1_MessageIn"/>
+      <output message="s0:XCAServer_SHUFFLE_MATRIX1_MessageOut"/>
+    </operation>
+    <operation name="ISEXIST_ELEMENTSERVICE_XCAJAX">
+      <documentation> R&amp;eacute;sum&amp;eacute; : &amp;lt;indiquez ici ce que fait la proc&amp;eacute;dure&amp;gt;&lt;br /&gt; Syntaxe :&lt;br /&gt;[ &amp;lt;R&amp;eacute;sultat&amp;gt; = ] ISEXIST_ELEMENTSERVICE_XCAJAX (&amp;lt;sServiceName&amp;gt; est cha&amp;#238;ne, &amp;lt;sElementName&amp;gt; est cha&amp;#238;ne, &amp;lt;sSessionVar&amp;gt; est cha&amp;#238;ne)&lt;br /&gt;&lt;br /&gt; Param&amp;egrave;tres :&lt;br /&gt;	sServiceName (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de sServiceName&amp;gt;&lt;br /&gt;	sElementName (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de sElementName&amp;gt;&lt;br /&gt;	sSessionVar (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de sSessionVar&amp;gt;&lt;br /&gt; Valeur de retour :&lt;br /&gt; 	bool&amp;eacute;en : // 	Aucune&lt;br /&gt;&lt;br /&gt; Exemple :&lt;br /&gt; Indiquez ici un exemple d'utilisation.&lt;br /&gt;</documentation>
+      <input message="s0:XCAServer_ISEXIST_ELEMENTSERVICE_XCAJAX_MessageIn"/>
+      <output message="s0:XCAServer_ISEXIST_ELEMENTSERVICE_XCAJAX_MessageOut"/>
+    </operation>
+    <operation name="GET_SESSIONVAR_XCAJAX">
+      <documentation> R&amp;eacute;sum&amp;eacute; : &amp;lt;indiquez ici ce que fait la proc&amp;eacute;dure&amp;gt;&lt;br /&gt; Syntaxe :&lt;br /&gt;[ &amp;lt;R&amp;eacute;sultat&amp;gt; = ] GET_SESSIONVAR_XCAJAX (&amp;lt;sServiceName&amp;gt; est cha&amp;#238;ne, &amp;lt;sElementName&amp;gt; est cha&amp;#238;ne)&lt;br /&gt;&lt;br /&gt; Param&amp;egrave;tres :&lt;br /&gt;	sServiceName (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de sServiceName&amp;gt;&lt;br /&gt;	sElementName (cha&amp;#238;ne ANSI) : &amp;lt;indiquez ici le r&amp;#244;le de sElementName&amp;gt;&lt;br /&gt; Valeur de retour :&lt;br /&gt; 	cha&amp;#238;ne ANSI : // 	Aucune&lt;br /&gt;&lt;br /&gt; Exemple :&lt;br /&gt; Indiquez ici un exemple d'utilisation.&lt;br /&gt;</documentation>
+      <input message="s0:XCAServer_GET_SESSIONVAR_XCAJAX_MessageIn"/>
+      <output message="s0:XCAServer_GET_SESSIONVAR_XCAJAX_MessageOut"/>
+    </operation>
+  </portType>
+  <binding name="XCAServerSOAPBinding" type="s0:XCAServerSOAPPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="REFRESH_AUTHSESSIONS">
+      <soap:operation soapAction="urn:XCAServer/REFRESH_AUTHSESSIONS" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="ISEXIST_ELEMENTSERVICE">
+      <soap:operation soapAction="urn:XCAServer/ISEXIST_ELEMENTSERVICE" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="UPLOAD_SERVERMATRIX">
+      <soap:operation soapAction="urn:XCAServer/UPLOAD_SERVERMATRIX" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GET_SERVER_CHALLENGE">
+      <soap:operation soapAction="urn:XCAServer/GET_SERVER_CHALLENGE" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="SEND_CLIENT_RESPONSE">
+      <soap:operation soapAction="urn:XCAServer/SEND_CLIENT_RESPONSE" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GENERATE_SERVER_CHALLENGE_WS">
+      <soap:operation soapAction="urn:XCAServer/GENERATE_SERVER_CHALLENGE_WS" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GET_AUTH_RESULT">
+      <soap:operation soapAction="urn:XCAServer/GET_AUTH_RESULT" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GET_SESSIONVAR">
+      <soap:operation soapAction="urn:XCAServer/GET_SESSIONVAR" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="COMPUTE_HASH1">
+      <soap:operation soapAction="urn:XCAServer/COMPUTE_HASH1" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GET_SESSIONVAR_ONLY">
+      <soap:operation soapAction="urn:XCAServer/GET_SESSIONVAR_ONLY" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="ISEXIST_CURRENTLOGIN_FORME">
+      <soap:operation soapAction="urn:XCAServer/ISEXIST_CURRENTLOGIN_FORME" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="ISEXIST_SERVICE">
+      <soap:operation soapAction="urn:XCAServer/ISEXIST_SERVICE" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="CREATE_SERVICE">
+      <soap:operation soapAction="urn:XCAServer/CREATE_SERVICE" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="CREATE_ELEMENT">
+      <soap:operation soapAction="urn:XCAServer/CREATE_ELEMENT" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="CREATE_ELEMENTSERVICE">
+      <soap:operation soapAction="urn:XCAServer/CREATE_ELEMENTSERVICE" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="ISEXIST_ELEMENT">
+      <soap:operation soapAction="urn:XCAServer/ISEXIST_ELEMENT" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="DOWNLOAD_CLIENTMATRIX">
+      <soap:operation soapAction="urn:XCAServer/DOWNLOAD_CLIENTMATRIX" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GENERATE_MATRIX1">
+      <soap:operation soapAction="urn:XCAServer/GENERATE_MATRIX1" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="SHUFFLE_MATRIX1">
+      <soap:operation soapAction="urn:XCAServer/SHUFFLE_MATRIX1" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="ISEXIST_ELEMENTSERVICE_XCAJAX">
+      <soap:operation soapAction="urn:XCAServer/ISEXIST_ELEMENTSERVICE_XCAJAX" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GET_SESSIONVAR_XCAJAX">
+      <soap:operation soapAction="urn:XCAServer/GET_SESSIONVAR_XCAJAX" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="XCAServer">
+    <port name="XCAServerSOAPPort" binding="s0:XCAServerSOAPBinding">
+      <soap:address location="http://ntx.pcscloud.net/XCASERVER_WEB/awws/XCAServer.awws"/>
+    </port>
+  </service>
+</definitions>
